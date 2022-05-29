@@ -1,0 +1,13 @@
+name: Send Email
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: hello
+        run: echo "Hello Github Actions"
