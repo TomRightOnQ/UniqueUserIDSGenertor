@@ -1,0 +1,24 @@
+name: Send Email
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: hello
+        run: echo "Hello Github Actions"
+
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: install yapf
+        run: pip3 install yapf
+        
+      - name: Run yapf
+        run: |
+          yapf -i SERVER.py 
+          yapf -i ID.py
