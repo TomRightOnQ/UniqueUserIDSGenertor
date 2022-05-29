@@ -15,8 +15,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: install flake8
-        run: pip3 install flake8
+      - name: install yapf
+        run: pip3 install yapf
         
-      - name: Run flake8
-        run: flake8 --statistics
+      - name: Run yapf
+        run: |
+          yapf -i SERVER.py 
+          yapf -i ID.py
